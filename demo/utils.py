@@ -1,7 +1,4 @@
 import csv
-import numpy as np
-from PIL import Image
-from hivision.plugin.watermark import Watermarker, WatermarkerStyles
 
 
 def csv_to_size_list(csv_file: str) -> dict:
@@ -42,20 +39,3 @@ def csv_to_color_list(csv_file: str) -> dict:
 def range_check(value, min_value=0, max_value=255):
     value = int(value)
     return max(min_value, min(value, max_value))
-
-
-def add_watermark(
-    image, text, size=50, opacity=0.5, angle=45, color="#8B8B1B", space=75
-):
-    image = Image.fromarray(image)
-    watermarker = Watermarker(
-        input_image=image,
-        text=text,
-        style=WatermarkerStyles.STRIPED,
-        angle=angle,
-        color=color,
-        opacity=opacity,
-        size=size,
-        space=space,
-    )
-    return np.array(watermarker.image.convert("RGB"))

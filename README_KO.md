@@ -15,11 +15,12 @@
 [![][wechat-shield]][wechat-link]
 [![][spaces-shield]][spaces-link]
 [![][swanhub-demo-shield]][swanhub-demo-link]
+[![][modelscope-shield]][modelscope-link]
 
 [![][trendshift-shield]][trendshift-link]
 [![][hellogithub-shield]][hellogithub-link]
 
-<img src="assets/demoImage.png" width=900>
+<img src="assets/demoImage.jpg" width=900>
 
 </div>
 
@@ -48,17 +49,15 @@
 
 # 🤩 최근 업데이트
 
-- 온라인 체험: [![SwanHub Demo](https://img.shields.io/static/v1?label=Demo&message=SwanHub%20Demo&color=blue)](https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo)、[![Spaces](https://img.shields.io/badge/🤗-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/TheEeeeLin/HivisionIDPhotos)
+- 온라인 체험: [![SwanHub Demo](https://img.shields.io/static/v1?label=Demo&message=SwanHub%20Demo&color=blue)](https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo)、[![Spaces](https://img.shields.io/badge/🤗-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/TheEeeeLin/HivisionIDPhotos)、[![][modelscope-shield]][modelscope-link]
 
-
-- 2024.09.11: Gradio Demo에 **투명 이미지 표시 및 다운로드** 기능 추가
-- 2024.09.09: 새로운 **배경 제거 모델** [BiRefNet-v1-lite](https://github.com/ZhengPeng7/BiRefNet) 추가 | Gradio에 **고급 매개변수 설정** 및 **워터마크** 탭 추가
-- 2024.09.08: 새로운 **컷아웃 모델** [RMBG-1.4](https://huggingface.co/briaai/RMBG-1.4) 추가 | **ComfyUI 워크플로우** - [HivisionIDPhotos-ComfyUI](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI) AIFSH의 기여
-- 2024.09.07: **얼굴 검출 API 옵션** [Face++](docs/face++_EN.md) 추가 및 보다 높은 정확도의 얼굴 검출 구현
-- 2024.09.06: 새로운 컷아웃 모델 [modnet_photographic_portrait_matting.onnx](https://github.com/ZHKKKe/MODNet) 추가
-- 2024.09.05: [Restful API 문서](docs/api_EN.md) 업데이트
-- 2024.09.02: **사진의 KB 크기 조정** 업데이트, [DockerHub](https://hub.docker.com/r/linzeyi/hivision_idphotos/tags)
-- 2023.12.01: **API 배포(fastapi 기반)** 업데이트
+- 2024.09.24: API 인터페이스에 base64 이미지 입력 옵션 추가 | Gradio 데모에 **레이아웃 사진 자르기 선** 기능 추가
+- 2024.09.22: Gradio Demo에 **버스트 모드** 및 **DPI** 매개변수 추가
+- 2024.09.18: Gradio Demo에 **템플릿 사진 공유** 기능 추가, **미국식** 배경 옵션 추가
+- 2024.09.17: Gradio Demo에 **커스텀 배경색-HEX 입력** 기능 추가 | **(커뮤니티 기여) C++ 버전** - [HivisionIDPhotos-cpp](https://github.com/zjkhahah/HivisionIDPhotos-cpp) 기여 by [zjkhahah](https://github.com/zjkhahah)
+- 2024.09.16: Gradio Demo에 **얼굴 회전 정렬** 기능 추가, 커스텀 사이즈 입력에 **밀리미터** 단위 추가
+- 2024.09.14: Gradio Demo에 **커스텀 DPI** 기능 추가, 일본어와 한국어 추가, **밝기, 대비, 선명도 조절** 기능 추가
+- 2024.09.12: Gradio 데모에 **미백** 기능 추가 | API 인터페이스에 **워터마크 추가**, **사진 KB 크기 설정**, **증명사진 자르기** 추가
 
 <br>
 
@@ -92,10 +91,22 @@ HivisionIDPhoto가 여러분에게 도움이 된다면, 이 리포지토리를 �
 
 우리는 커뮤니티에 의해 구축된 HivisionIDPhotos의 흥미로운 애플리케이션 및 확장 기능을 몇 가지 공유합니다:
 
-- [HivisionIDPhotos-windows-GUI](https://github.com/zhaoyun0071/HivisionIDPhotos-windows-GUI)：Windows 클라이언트 애플리케이션, [zhaoyun0071](https://github.com/zhaoyun0071)이 구축하였습니다
-- [HivisionIDPhotos-ComfyUI](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI)：ComfyUI 증명사진 처리 워크플로우, [AIFSH](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI)이 구축하였습니다 
+- [HivisionIDPhotos-ComfyUI](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI): ComfyUI 증명사진 처리 워크플로우, [AIFSH](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI)가 구축
 
-[![](assets/comfyui.png)](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI)
+[<img src="assets/comfyui.png" width="900" alt="ComfyUI workflow">](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI)
+
+- [HivisionIDPhotos-wechat-weapp](https://github.com/no1xuan/HivisionIDPhotos-wechat-weapp): WeChat 증명사진 미니 프로그램, HivisionIDphotos 알고리즘 기반, [no1xuan](https://github.com/no1xuan)이 기여
+
+[<img src="assets/community-wechat-miniprogram.png" width="900" alt="HivisionIDPhotos-wechat-weapp">](https://github.com/no1xuan/HivisionIDPhotos-wechat-weapp)
+
+- [HivisionIDPhotos-Uniapp](https://github.com/soulerror/HivisionIDPhotos-Uniapp): 기본 uniapp 증명사진 미니 프로그램 전면, HivisionIDphotos 알고리즘 기반, [soulerror](https://github.com/soulerror)이 기여
+
+[<img src="assets/community-uniapp-wechat-miniprogram.png" width="900" alt="HivisionIDPhotos-uniapp">](https://github.com/soulerror/HivisionIDPhotos-Uniapp)
+
+- [HivisionIDPhotos-cpp](https://github.com/zjkhahah/HivisionIDPhotos-cpp): HivisionIDphotos C++ 버전, [zjkhahah](https://github.com/zjkhahah)이 구축
+- [HivisionIDPhotos-windows-GUI](https://github.com/zhaoyun0071/HivisionIDPhotos-windows-GUI): Windows 클라이언트 애플리케이션, [zhaoyun0071](https://github.com/zhaoyun0071)이 구축
+- [HivisionIDPhotos-NAS](https://github.com/ONG-Leo/HivisionIDPhotos-NAS): Synology NAS 배포 중국어 튜토리얼, [ONG-Leo](https://github.com/ONG-Leo)가 기여
+
 
 <br>
 
@@ -144,16 +155,32 @@ python scripts/download_model.py --models all
 | MTCNN | **오프라인** 얼굴 검출 모델, 고성능 CPU 추론, 기본 모델, 검출 정확도가 낮음 | 이 프로젝트를 클론한 후 직접 사용 |
 | Face++ | Megvii에서 제공하는 온라인 얼굴 검출 API, 고정밀 검출, [공식 문서](https://console.faceplusplus.com.cn/documents/4888373) | [사용 문서](docs/face++_EN.md)|
 
-## 5. GPU 추론 가속 (선택 사항)
+## 5. 성능 참조
 
-NVIDIA GPU를 통한 추론 가속을 사용하려면 CUDA와 cuDNN이 설치되어 있는지 확인하고, [문서](https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#cuda-12x)에 따라 해당 `onnxruntime-gpu` 버전을 설치합니다. 예:
+> 테스트 환경은 Mac M1 Max 64GB, 비GPU 가속, 테스트 이미지 해상도는 512x715(1) 및 764×1146(2)입니다.
+
+| 모델 조합 | 메모리 사용량 | 추론 시간(1) | 추론 시간(2) |
+| -- | -- | -- | -- |
+| MODNet + mtcnn | 410MB | 0.207초 | 0.246초 |
+| MODNet + retinaface | 405MB | 0.571초 | 0.971초 |
+| birefnet-v1-lite + retinaface | 6.20GB | 7.063초 | 7.128초 |
+
+## 6. GPU 추론 가속 (선택 사항)
+
+현재 버전에서 NVIDIA GPU로 가속화할 수 있는 모델은 `birefnet-v1-lite`입니다. 약 16GB의 VRAM이 필요합니다.
+
+NVIDIA GPU를 사용하여 추론을 가속화하려면, CUDA와 cuDNN이 설치되어 있는지 확인한 후, [onnxruntime-gpu 문서](https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#cuda-12x)에서 해당하는 `onnxruntime-gpu` 버전을 찾아 설치하고, [PyTorch 공식 웹사이트](https://pytorch.org/get-started/locally/)에서 해당하는 `pytorch` 버전을 찾아 설치하세요.
 
 ```bash
-# CUDA 12.x, cuDNN 8
+# 컴퓨터에 CUDA 12.x와 cuDNN 8이 설치되어 있는 경우
+# 설치 중 torch를 설치하는 것은 선택 사항입니다. cuDNN을 설정할 수 없는 경우 torch를 설치해 보세요.
 pip install onnxruntime-gpu==1.18.0
+pip install torch --index-url https://download.pytorch.org/whl/cu121
 ```
 
-완료 후, `birefnet-v1-lite` 모델을 호출하면 GPU에 의한 추론 가속이 이용됩니다.
+설치 완료 후, `birefnet-v1-lite` 모델을 호출하면 GPU에 의한 추론 가속이 이용됩니다.
+
+> TIPS: CUDA 설치는 하위 호환성이 있습니다. 예를 들어, CUDA 버전이 12.6이고, torch가 현재 지원하는 최대 버전이 12.4인 경우, 컴퓨터에 12.4 버전을 설치할 수 있습니다.
 
 <br>
 
@@ -175,40 +202,50 @@ python app.py
 
 - `-i`: 입력 이미지 경로
 - `-o`: 저장 이미지 경로
-- `-t`: 추론 유형, idphoto, human_matting, add_background, generate_layout_photos 중 선택 가능
-- `--matting_model`: 인물 컷아웃 모델 가중치 선택
-- `--face_detect_model`: 얼굴 검출 모델 선택
+- `-t`: 추론 유형, idphoto, human_matting, add_background, generate_layout_photos 중 선택
+- `--matting_model`: 인물 마스크 모델 가중치 선택
+- `--face_detect_model`: 얼굴 감지 모델 선택
 
-자세한 매개변수는 `python inference.py --help`에서 확인할 수 있습니다.
+더 많은 매개변수는 `python inference.py --help`를 통해 확인할 수 있습니다.
 
 ## 1. 증명사진 제작
 
-1장의 사진을 입력하여 1장의 표준 증명사진과 1장의 고해상도 증명사진의 4채널 투명 PNG를 얻습니다.
+1장의 사진을 입력하여 1장의 표준 증명사진과 1장의 고화질 증명사진의 4채널 투명 PNG를 얻습니다.
 
 ```python
-python inference.py -i demo/images/test.jpg -o ./idphoto.png --height 413 --width 295
+python inference.py -i demo/images/test0.jpg -o ./idphoto.png --height 413 --width 295
 ```
 
-## 2. 인물 컷아웃
+## 2. 인물 마스크
+
+1장의 사진을 입력하여 1장의 4채널 투명 PNG를 얻습니다.
 
 ```python
-python inference.py -t human_matting -i demo/images/test.jpg -o ./idphoto_matting.png --matting_model hivision_modnet
+python inference.py -t human_matting -i demo/images/test0.jpg -o ./idphoto_matting.png --matting_model hivision_modnet
 ```
 
 ## 3. 투명 이미지에 배경색 추가
 
-1장의 4채널 투명 PNG를 입력하여 배경색이 추가된 이미지를 얻습니다.
+1장의 4채널 투명 PNG를 입력하여 1장의 배경색이 추가된 3채널 이미지를 얻습니다.
 
 ```python
 python inference.py -t add_background -i ./idphoto.png -o ./idphoto_ab.jpg  -c 4f83ce -k 30 -r 1
 ```
 
-## 4. 육寸 레이아웃 사진 얻기
+## 4. 6인치 배치 사진 생성
 
-1장의 3채널 사진을 입력하여 1장의 육寸 레이아웃 사진을 얻습니다.
+1장의 3채널 사진을 입력하여 1장의 6인치 배치 사진을 얻습니다.
 
 ```python
 python inference.py -t generate_layout_photos -i ./idphoto_ab.jpg -o ./idphoto_layout.jpg  --height 413 --width 295 -k 200
+```
+
+## 5. 증명사진 자르기
+
+1장의 4채널 사진(마스크 처리된 이미지)을 입력하여 1장의 표준 증명사진과 1장의 고화질 증명사진의 4채널 투명 PNG를 얻습니다.
+
+```python
+python inference.py -t idphoto_crop -i ./idphoto_matting.png -o ./idphoto_crop.png --height 413 --width 295
 ```
 
 <br>
@@ -245,7 +282,7 @@ docker pull linzeyi/hivision_idphotos
 
 **방법 2: Dockerfile에서 직접 이미지 빌드하기:**
 
-모델 가중치 파일 [hivision_modnet.onnx](https://github.com/Zeyi-Lin/HivisionIDPhotos/releases/tag/pretrained-model)를 `hivision/creator/weights`에 배치한 것을 확인한 후, 프로젝트의 루트 디렉토리에서 실행:
+`hivision/creator/weights` 디렉토리에 최소한 하나의 [마스킹 모델 가중치 파일](#3-가중치-파일-다운로드)이 있는지 확인한 후, 프로젝트 루트 디렉토리에서 다음을 실행하세요:
 
 ```bash
 docker build -t linzeyi/hivision_idphotos .
@@ -253,7 +290,7 @@ docker build -t linzeyi/hivision_idphotos .
 
 **방법 3: Docker compose로 빌드하기:**
 
-모델 가중치 파일 [hivision_modnet.onnx](https://github.com/Zeyi-Lin/HivisionIDPhotos/releases/tag/pretrained-model)를 `hivision/creator/weights`에 배치한 것을 확인한 후, 프로젝트의 루트 디렉토리에서 실행:
+`hivision/creator/weights` 디렉토리에 최소한 하나의 [마스킹 모델 가중치 파일](#3-가중치-파일-다운로드)이 있는지 확인한 후, 프로젝트 루트 디렉토리에서 다음을 실행하세요:
 
 ```bash
 docker compose build
@@ -328,17 +365,29 @@ docker run  -d -p 7860:7860 \
 
 <br>
 
-# 💻 개발 팁
+# 자주 묻는 질문 (FAQ)
 
-## 기본 크기와 색상을 어떻게 수정하나요?**
+## 1. 기본 크기와 색상을 어떻게 수정하나요?
 
 - 크기: [size_list_EN.csv](demo/assets/size_list_EN.csv) 파일을 수정한 후 `app.py`를 다시 실행하면 됩니다. 첫 번째 열은 크기 이름, 두 번째 열은 높이, 세 번째 열은 너비입니다.
 - 색상: [color_list_EN.csv](demo/assets/color_list_EN.csv) 파일을 수정한 후 `app.py`를 다시 실행하면 됩니다. 첫 번째 열은 색상 이름, 두 번째 열은 Hex 값입니다.
 
-## 워터마크 폰트 변경 방법
+## 2. 워터마크 글꼴을 어떻게 수정하나요?
 
-1. 폰트 파일을 `hivision/plugin/font` 폴더에 배치합니다.
-2. `hivision/plugin/watermark.py`의 `font_file` 매개변수 값을 폰트 파일 이름으로 변경합니다.
+1. 글꼴 파일을 `hivision/plugin/font` 폴더에 넣습니다.
+2. `hivision/plugin/watermark.py` 파일에서 `font_file` 매개변수 값을 글꼴 파일 이름으로 수정합니다.
+
+## 3. 소셜 미디어 템플릿 사진을 어떻게 추가하나요?
+
+1. 템플릿 이미지를 `hivision/plugin/template/assets` 폴더에 넣습니다. 템플릿 이미지는 4채널 투명 PNG입니다.
+2. `hivision/plugin/template/assets/template_config.json` 파일에 최신 템플릿 정보를 추가합니다. 여기서 `width`는 템플릿 이미지의 너비(px), `height`는 템플릿 이미지의 높이(px), `anchor_points`는 템플릿의 투명 영역 네 모서리의 좌표(px)입니다. `rotation`은 투명 영역의 수직 방향에 대한 회전 각도로, >0은 반시계 방향, <0은 시계 방향입니다.
+3. `demo/processor.py`의 `_generate_image_template` 함수 내의 `TEMPLATE_NAME_LIST` 변수에 최신 템플릿 이름을 추가합니다.
+
+<img src="assets/social_template.png" width="500">
+
+## 4. Gradio Demo의 상단 내비게이션 바를 어떻게 수정하나요?
+
+- `demo/assets/title.md` 파일을 수정합니다.
 
 <br>
 
@@ -358,9 +407,19 @@ docker run  -d -p 7860:7860 \
 
 <br>
 
-# StarHistory
+# Thanks for support
+
+[![Stargazers repo roster for @Zeyi-Lin/HivisionIDPhotos](https://reporoster.com/stars/Zeyi-Lin/HivisionIDPhotos)](https://github.com/Zeyi-Lin/HivisionIDPhotos/stargazers)
+
+[![Forkers repo roster for @Zeyi-Lin/HivisionIDPhotos](https://reporoster.com/forks/Zeyi-Lin/HivisionIDPhotos)](https://github.com/Zeyi-Lin/HivisionIDPhotos/network/members)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Zeyi-Lin/HivisionIDPhotos&type=Date)](https://star-history.com/#Zeyi-Lin/HivisionIDPhotos&Date)
+
+<br>
+
+# Lincese
+
+This repository is licensed under the [Apache-2.0 License](LICENSE).
 
 [github-stars-shield]: https://img.shields.io/github/stars/zeyi-lin/hivisionidphotos?color=ffcb47&labelColor=black&style=flat-square
 [github-stars-link]: https://github.com/zeyi-lin/hivisionidphotos/stargazers
@@ -399,3 +458,6 @@ docker run  -d -p 7860:7860 \
 
 [github-forks-shield]: https://img.shields.io/github/forks/zeyi-lin/hivisionidphotos?color=8ae8ff&labelColor=black&style=flat-square
 [github-forks-link]: https://github.com/zeyi-lin/hivisionidphotos/network/members
+
+[modelscope-shield]: https://img.shields.io/badge/Demo_on_ModelScope-purple?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIzIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCiA8Zz4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHBhdGggaWQ9InN2Z18xNCIgZmlsbD0iIzYyNGFmZiIgZD0ibTAsODkuODRsMjUuNjUsMGwwLDI1LjY0OTk5bC0yNS42NSwwbDAsLTI1LjY0OTk5eiIvPgogIDxwYXRoIGlkPSJzdmdfMTUiIGZpbGw9IiM2MjRhZmYiIGQ9Im05OS4xNCwxMTUuNDlsMjUuNjUsMGwwLDI1LjY1bC0yNS42NSwwbDAsLTI1LjY1eiIvPgogIDxwYXRoIGlkPSJzdmdfMTYiIGZpbGw9IiM2MjRhZmYiIGQ9Im0xNzYuMDksMTQxLjE0bC0yNS42NDk5OSwwbDAsMjIuMTlsNDcuODQsMGwwLC00Ny44NGwtMjIuMTksMGwwLDI1LjY1eiIvPgogIDxwYXRoIGlkPSJzdmdfMTciIGZpbGw9IiMzNmNmZDEiIGQ9Im0xMjQuNzksODkuODRsMjUuNjUsMGwwLDI1LjY0OTk5bC0yNS42NSwwbDAsLTI1LjY0OTk5eiIvPgogIDxwYXRoIGlkPSJzdmdfMTgiIGZpbGw9IiMzNmNmZDEiIGQ9Im0wLDY0LjE5bDI1LjY1LDBsMCwyNS42NWwtMjUuNjUsMGwwLC0yNS42NXoiLz4KICA8cGF0aCBpZD0ic3ZnXzE5IiBmaWxsPSIjNjI0YWZmIiBkPSJtMTk4LjI4LDg5Ljg0bDI1LjY0OTk5LDBsMCwyNS42NDk5OWwtMjUuNjQ5OTksMGwwLC0yNS42NDk5OXoiLz4KICA8cGF0aCBpZD0ic3ZnXzIwIiBmaWxsPSIjMzZjZmQxIiBkPSJtMTk4LjI4LDY0LjE5bDI1LjY0OTk5LDBsMCwyNS42NWwtMjUuNjQ5OTksMGwwLC0yNS42NXoiLz4KICA8cGF0aCBpZD0ic3ZnXzIxIiBmaWxsPSIjNjI0YWZmIiBkPSJtMTUwLjQ0LDQybDAsMjIuMTlsMjUuNjQ5OTksMGwwLDI1LjY1bDIyLjE5LDBsMCwtNDcuODRsLTQ3Ljg0LDB6Ii8+CiAgPHBhdGggaWQ9InN2Z18yMiIgZmlsbD0iIzM2Y2ZkMSIgZD0ibTczLjQ5LDg5Ljg0bDI1LjY1LDBsMCwyNS42NDk5OWwtMjUuNjUsMGwwLC0yNS42NDk5OXoiLz4KICA8cGF0aCBpZD0ic3ZnXzIzIiBmaWxsPSIjNjI0YWZmIiBkPSJtNDcuODQsNjQuMTlsMjUuNjUsMGwwLC0yMi4xOWwtNDcuODQsMGwwLDQ3Ljg0bDIyLjE5LDBsMCwtMjUuNjV6Ii8+CiAgPHBhdGggaWQ9InN2Z18yNCIgZmlsbD0iIzYyNGFmZiIgZD0ibTQ3Ljg0LDExNS40OWwtMjIuMTksMGwwLDQ3Ljg0bDQ3Ljg0LDBsMCwtMjIuMTlsLTI1LjY1LDBsMCwtMjUuNjV6Ii8+CiA8L2c+Cjwvc3ZnPg==&labelColor=white
+[modelscope-link]: https://modelscope.cn/studios/SwanLab/HivisionIDPhotos

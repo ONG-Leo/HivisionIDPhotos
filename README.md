@@ -15,13 +15,12 @@
 [![][wechat-shield]][wechat-link]
 [![][spaces-shield]][spaces-link]
 [![][swanhub-demo-shield]][swanhub-demo-link]
+[![][modelscope-shield]][modelscope-link]
 
 [![][trendshift-shield]][trendshift-link]
 [![][hellogithub-shield]][hellogithub-link]
 
-<img src="assets/demoImage.png" width=900>
-
-👋 加入我们的[微信群][wechat-link]
+<img src="assets/demoImage.jpg" width=900>
 
 </div>
 
@@ -43,23 +42,25 @@
 - [API服务部署](#️-部署-api-服务)
 - [Docker部署](#-docker-部署)
 - [联系我们](#-联系我们)
-- [Q&A](#qa)
-- [贡献者](#贡献者)
+- [FAQ](#faq)
+- [感谢支持](#-感谢支持)
+- [License](#-lincese)
+- [引用](#-引用)
 
 <br>
 
 # 🤩 最近更新
 
-- 在线体验： [![SwanHub Demo](https://img.shields.io/static/v1?label=Demo&message=SwanHub%20Demo&color=blue)](https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo)、[![Spaces](https://img.shields.io/badge/🤗-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/TheEeeeLin/HivisionIDPhotos)
+- 在线体验： [![SwanHub Demo](https://img.shields.io/static/v1?label=Demo&message=SwanHub%20Demo&color=blue)](https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo)、[![Spaces](https://img.shields.io/badge/🤗-Open%20in%20Spaces-blue)](https://huggingface.co/spaces/TheEeeeLin/HivisionIDPhotos)、[![][modelscope-shield]][modelscope-link]
 
-- 2024.09.11: Gradio Demo增加**透明图显示与下载**功能
-- 2024.09.10: 增加新的**人脸检测模型** Retinaface-resnet50，以稍弱于mtcnn的速度换取更高的检测精度，推荐使用
-- 2024.09.09: 增加新的**抠图模型** [BiRefNet-v1-lite](https://github.com/ZhengPeng7/BiRefNet) | Gradio增加**高级参数设置**和**水印**选项卡
-- 2024.09.08: 增加新的**抠图模型** [RMBG-1.4](https://huggingface.co/briaai/RMBG-1.4) | **ComfyUI工作流** - [HivisionIDPhotos-ComfyUI](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI) 贡献 by [AIFSH](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI)
-- 2024.09.07: 增加**人脸检测API选项** [Face++](docs/face++_CN.md)，实现更高精度的人脸检测
-- 2024.09.06: 增加新的抠图模型 [modnet_photographic_portrait_matting.onnx](https://github.com/ZHKKKe/MODNet)
-- 2024.09.05: 更新 [Restful API 文档](docs/api_CN.md)
-- 2024.09.02: 更新**调整照片 KB 大小**，[DockerHub](https://hub.docker.com/r/linzeyi/hivision_idphotos/tags)
+- 2024.09.25: 增加**五寸相纸**和**JPEG下载**选项｜默认照片下载支持300DPI
+- 2024.09.24: API接口增加base64图像传入选项 | Gradio Demo增加**排版照裁剪线**功能
+- 2024.09.22: Gradio Demo增加**野兽模式**，可设置内存加载策略 | API接口增加**dpi、face_alignment**参数
+- 2024.09.18: Gradio Demo增加**分享模版照**功能、增加**美式证件照**背景选项
+- 2024.09.17: Gradio Demo增加**自定义底色-HEX输入**功能 | **（社区贡献）C++版本** - [HivisionIDPhotos-cpp](https://github.com/zjkhahah/HivisionIDPhotos-cpp) 贡献 by [zjkhahah](https://github.com/zjkhahah)
+- 2024.09.16: Gradio Demo增加**人脸旋转对齐**功能，自定义尺寸输入支持**毫米**单位
+- 2024.09.14: Gradio Demo增加**自定义DPI**功能，增加日语和韩语支持，增加**调整亮度、对比度、锐度**功能
+- 2024.09.12: Gradio Demo增加**美白**功能 | API接口增加**加水印**、**设置照片KB值大小**、**证件照裁切**
 
 <br>
 
@@ -76,7 +77,7 @@ HivisionIDPhoto 旨在开发一种实用、系统性的证件照智能制作算�
 1. 轻量级抠图（纯离线，仅需 **CPU** 即可快速推理）
 2. 根据不同尺寸规格生成不同的标准证件照、六寸排版照
 3. 支持 纯离线 或 端云 推理
-4. 美颜（waiting）
+4. 美颜
 5. 智能换正装（waiting）
 
 <div align="center">
@@ -93,12 +94,23 @@ HivisionIDPhoto 旨在开发一种实用、系统性的证件照智能制作算�
 
 我们分享了一些由社区构建的HivisionIDPhotos的有趣应用和扩展：
 
+| [HivisionIDPhotos-ComfyUI][community-hivision-comfyui] | [HivisionIDPhotos-wechat-weapp][community-hivision-wechat] |
+| :----------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: |
+| <a href="https://github.com/AIFSH/HivisionIDPhotos-ComfyUI"> <img src="assets/comfyui.png" width="900" alt="ComfyUI workflow"> </a>  | <a href="https://github.com/no1xuan/HivisionIDPhotos-wechat-weapp"> <img src="assets/community-wechat-miniprogram.png" width="900" alt="ComfyUI workflow"> </a>  |
+|ComfyUI证件照处理工作流 | 证件照微信小程序（JAVA后端+原生前端） |
+
+| [HivisionIDPhotos-Uniapp][community-hivision-uniapp] | [HivisionIDPhotos-web](https://github.com/jkm199/HivisionIDPhotos-web)|
+| :------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: |
+| <a href="https://github.com/soulerror/HivisionIDPhotos-Uniapp"> <img src="assets/community-uniapp-wechat-miniprogram.png" width="900" alt="HivisionIDPhotos-uniapp"> </a>  | <a href="https://github.com/jkm199/HivisionIDPhotos-web"> <img src="assets/community-web.png" width="900" alt="HivisionIDPhotos-uniapp"> </a>  |
+| 证件照微信小程序（uniapp）| 证件照应用网页版 |
+
+
+- [HivisionIDPhotos-cpp](https://github.com/zjkhahah/HivisionIDPhotos-cpp): HivisionIDphotos C++版本，由 [zjkhahah](https://github.com/zjkhahah) 构建
+- [ai-idphoto](https://github.com/wmlcjj/ai-idphoto): [HivisionIDPhotos-wechat-weapp](https://github.com/no1xuan/HivisionIDPhotos-wechat-weapp) 的uniapp多端兼容版，由 [wmlcjj](https://github.com/wmlcjj) 贡献
+- [HivisionIDPhotos-uniapp-WeChat-gpto1](https://github.com/jkm199/HivisionIDPhotos-uniapp-WeChat-gpto1/): 由gpt-o1辅助完成开发的证件照微信小程序，由 [jkm199](https://github.com/jkm199) 贡献
 - [HivisionIDPhotos-windows-GUI](https://github.com/zhaoyun0071/HivisionIDPhotos-windows-GUI)：Windows客户端应用，由 [zhaoyun0071](https://github.com/zhaoyun0071) 构建
-- [HivisionIDPhotos-ComfyUI](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI)：ComfyUI证件照处理工作流，由 [AIFSH](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI) 构建 
-
-[![](assets/comfyui.png)](https://github.com/AIFSH/HivisionIDPhotos-ComfyUI)
-
 - [HivisionIDPhotos-NAS](https://github.com/ONG-Leo/HivisionIDPhotos-NAS): 群晖NAS部署中文教程，由 [ONG-Leo](https://github.com/ONG-Leo) 贡献
+
 
 <br>
 
@@ -124,21 +136,28 @@ pip install -r requirements.txt
 pip install -r requirements-app.txt
 ```
 
-## 3. 下载权重文件
+## 3. 下载人像抠图模型权重文件
 
 **方式一：脚本下载**
 
 ```bash
 python scripts/download_model.py --models all
+# 如需指定下载某个模型
+# python scripts/download_model.py --models modnet_photographic_portrait_matting
 ```
 
 **方式二：直接下载**
 
-存到项目的`hivision/creator/weights`目录下：
-- `modnet_photographic_portrait_matting.onnx` (24.7MB): [MODNet](https://github.com/ZHKKKe/MODNet)官方权重，[下载](https://github.com/Zeyi-Lin/HivisionIDPhotos/releases/download/pretrained-model/modnet_photographic_portrait_matting.onnx)
-- `hivision_modnet.onnx` (24.7MB): 对纯色换底适配性更好的抠图模型，[下载](https://github.com/Zeyi-Lin/HivisionIDPhotos/releases/download/pretrained-model/hivision_modnet.onnx)
-- `rmbg-1.4.onnx` (176.2MB): [BRIA AI](https://huggingface.co/briaai/RMBG-1.4) 开源的抠图模型，[下载](https://huggingface.co/briaai/RMBG-1.4/resolve/main/onnx/model.onnx?download=true)后重命名为`rmbg-1.4.onnx`
-- `birefnet-v1-lite.onnx`(224MB): [ZhengPeng7](https://github.com/ZhengPeng7/BiRefNet) 开源的抠图模型，[下载](https://github.com/ZhengPeng7/BiRefNet/releases/download/v1/BiRefNet-general-bb_swin_v1_tiny-epoch_232.onnx)后重命名为`birefnet-v1-lite.onnx`
+模型均存到项目的`hivision/creator/weights`目录下：
+
+| 人像抠图模型 | 介绍 | 下载 |
+| -- | -- | -- |
+| MODNet | [MODNet](https://github.com/ZHKKKe/MODNet)官方权重 | [下载](https://github.com/Zeyi-Lin/HivisionIDPhotos/releases/download/pretrained-model/modnet_photographic_portrait_matting.onnx)(24.7MB)|
+| hivision_modnet | 对纯色换底适配性更好的抠图模型 | [下载](https://github.com/Zeyi-Lin/HivisionIDPhotos/releases/download/pretrained-model/hivision_modnet.onnx)(24.7MB) |
+| rmbg-1.4 | [BRIA AI](https://huggingface.co/briaai/RMBG-1.4) 开源的抠图模型 | [下载](https://huggingface.co/briaai/RMBG-1.4/resolve/main/onnx/model.onnx?download=true)(176.2MB)后重命名为`rmbg-1.4.onnx` |
+| birefnet-v1-lite | [ZhengPeng7](https://github.com/ZhengPeng7/BiRefNet) 开源的抠图模型，拥有最好的分割精度 | [下载](https://github.com/ZhengPeng7/BiRefNet/releases/download/v1/BiRefNet-general-bb_swin_v1_tiny-epoch_232.onnx)(224MB)后重命名为`birefnet-v1-lite.onnx` |
+
+> 如果下载网速不顺利：前往[SwanHub](https://swanhub.co/ZeYiLin/HivisionIDPhotos_models/tree/main)下载。
 
 
 ## 4. 人脸检测模型配置（可选）
@@ -149,20 +168,36 @@ python scripts/download_model.py --models all
 | RetinaFace | **离线**人脸检测模型，CPU推理速度中等（秒级），精度较高| [下载](https://github.com/Zeyi-Lin/HivisionIDPhotos/releases/download/pretrained-model/retinaface-resnet50.onnx)后放到`hivision/creator/retinaface/weights`目录下 |
 | Face++ | 旷视推出的在线人脸检测API，检测精度较高，[官方文档](https://console.faceplusplus.com.cn/documents/4888373) | [使用文档](docs/face++_CN.md)|
 
-## 5. GPU推理加速（可选）
+## 5. 性能参考
 
-如需使用英伟达GPU加速推理，在确保你已经安装CUDA与cuDNN后，根据[文档](https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#cuda-12x)找到对应的`onnxruntime-gpu`版本安装，如：
+> 测试环境为Mac M1 Max 64GB，非GPU加速，测试图片分辨率为 512x715(1) 与 764×1146(2)。
+
+| 模型组合 | 内存占用 | 推理时长(1) | 推理时长(2) |
+| -- | -- | -- | -- |
+| MODNet + mtcnn | 410MB | 0.207s | 0.246s |
+| MODNet + retinaface | 405MB | 0.571s | 0.971s |
+| birefnet-v1-lite + retinaface | 6.20GB | 7.063s | 7.128s |
+
+## 6. GPU推理加速（可选）
+
+在当前版本，可被英伟达GPU加速的模型为`birefnet-v1-lite`，并请确保你有16GB左右的显存。
+
+如需使用英伟达GPU加速推理，在确保你已经安装[CUDA](https://developer.nvidia.com/cuda-downloads)与[cuDNN](https://developer.nvidia.com/cudnn)后，根据[onnxruntime-gpu文档](https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#cuda-12x)找到对应的`onnxruntime-gpu`版本安装，以及根据[pytorch官网](https://pytorch.org/get-started/locally/)找到对应的`torch`版本安装。
 
 ```bash
-# CUDA 12.x, cuDNN 8
+# 假如你的电脑安装的是CUDA 12.x, cuDNN 8
+# 安装torch是可选的，如果你始终配置不好cuDNN，那么试试安装torch
 pip install onnxruntime-gpu==1.18.0
+pip install torch --index-url https://download.pytorch.org/whl/cu121
 ```
 
-完成后，调用如`birefnet-v1-lite`模型将会利用GPU加速推理。
+完成安装后，调用`birefnet-v1-lite`模型即可利用GPU加速推理。
+
+> TIPS: CUDA 支持向下兼容。比如你的 CUDA 版本为 12.6，`torch` 官方目前支持的最高版本为 12.4（<12.6），`torch`仍可以正常使用CUDA。
 
 <br>
 
-# 🚀 运行 Gradio Demo
+# ⚡️ 运行 Gradio Demo
 
 ```bash
 python app.py
@@ -191,7 +226,7 @@ python app.py
 输入 1 张照片，获得 1 张标准证件照和 1 张高清证件照的 4 通道透明 png
 
 ```python
-python inference.py -i demo/images/test.jpg -o ./idphoto.png --height 413 --width 295
+python inference.py -i demo/images/test0.jpg -o ./idphoto.png --height 413 --width 295
 ```
 
 ## 2. 人像抠图
@@ -199,7 +234,7 @@ python inference.py -i demo/images/test.jpg -o ./idphoto.png --height 413 --widt
 输入 1 张照片，获得 1张 4 通道透明 png
 
 ```python
-python inference.py -t human_matting -i demo/images/test.jpg -o ./idphoto_matting.png --matting_model hivision_modnet
+python inference.py -t human_matting -i demo/images/test0.jpg -o ./idphoto_matting.png --matting_model hivision_modnet
 ```
 
 ## 3. 透明图增加底色
@@ -218,6 +253,15 @@ python inference.py -t add_background -i ./idphoto.png -o ./idphoto_ab.jpg  -c 4
 python inference.py -t generate_layout_photos -i ./idphoto_ab.jpg -o ./idphoto_layout.jpg  --height 413 --width 295 -k 200
 ```
 
+## 5. 证件照裁剪
+
+输入 1 张 4 通道照片（抠图好的图像），获得 1 张标准证件照和 1 张高清证件照的 4 通道透明 png
+
+```python
+python inference.py -t idphoto_crop -i ./idphoto_matting.png -o ./idphoto_crop.png --height 413 --width 295
+```
+
+
 <br>
 
 # ⚡️ 部署 API 服务
@@ -233,8 +277,6 @@ python deploy_api.py
 详细请求方式请参考 [API 文档](docs/api_CN.md)，包含以下请求示例：
 - [cURL](docs/api_CN.md#curl-请求示例)
 - [Python](docs/api_CN.md#python-请求示例)
-- [Java](docs/api_CN.md#java-请求示例)
-- [Javascript](docs/api_CN.md#javascript-请求示例)
 
 <br>
 
@@ -252,7 +294,7 @@ docker pull linzeyi/hivision_idphotos
 
 **方式二：Dockrfile 直接构建镜像：**
 
-在确保将模型权重文件[hivision_modnet.onnx](https://github.com/Zeyi-Lin/HivisionIDPhotos/releases/tag/pretrained-model)放到`hivision/creator/weights`下后，在项目根目录执行：
+在确保将至少一个[抠图模型权重文件](#3-下载权重文件)放到`hivision/creator/weights`下后，在项目根目录执行：
 
 ```bash
 docker build -t linzeyi/hivision_idphotos .
@@ -260,7 +302,7 @@ docker build -t linzeyi/hivision_idphotos .
 
 **方式三：Docker compose 构建：**
 
-确保将模型权重文件 [hivision_modnet.onnx](https://github.com/Zeyi-Lin/HivisionIDPhotos/releases/tag/pretrained-model) 放在`hivision/creator/weights`下后，在项目根目录下执行：
+在确保将至少一个[抠图模型权重文件](#3-下载权重文件)放到`hivision/creator/weights`下后，在项目根目录下执行：
 
 ```bash
 docker compose build
@@ -296,57 +338,44 @@ docker compose up -d
 |--|--|--|--|
 | FACE_PLUS_API_KEY	 | 可选	| 这是你在 Face++ 控制台申请的 API 密钥	 | `7-fZStDJ····` |
 | FACE_PLUS_API_SECRET	 | 可选	| Face++ API密钥对应的Secret | `VTee824E····` |
+| RUN_MODE | 可选 | 运行模式，可选值为`beast`(野兽模式)。野兽模式下人脸检测和抠图模型将不释放内存，从而获得更快的二次推理速度。建议内存16GB以上尝试。 | `beast` |
+| DEFAULT_LANG | 可选 | Gradio Demo启动时的默认语言| `en` |
 
 docker使用环境变量示例：
 ```bash
 docker run  -d -p 7860:7860 \
     -e FACE_PLUS_API_KEY=7-fZStDJ···· \
     -e FACE_PLUS_API_SECRET=VTee824E···· \
-    linzeyi/hivision_idphotos 
+    -e RUN_MODE=beast \
+    -e DEFAULT_LANG=en \
+    linzeyi/hivision_idphotos  
 ```
 
 <br>
 
-# 📖 引用项目
+# FAQ
 
-1. MTCNN:
-
-```bibtex
-@software{ipazc_mtcnn_2021,
-    author = {ipazc},
-    title = {{MTCNN}},
-    url = {https://github.com/ipazc/mtcnn},
-    year = {2021},
-    publisher = {GitHub}
-}
-```
-
-2. ModNet:
-
-```bibtex
-@software{zhkkke_modnet_2021,
-    author = {ZHKKKe},
-    title = {{ModNet}},
-    url = {https://github.com/ZHKKKe/MODNet},
-    year = {2021},
-    publisher = {GitHub}
-}
-```
-
-<br>
-
-
-# Q&A
-
-## 如何修改预设尺寸和颜色？
+## 1. 如何修改预设尺寸和颜色？
 
 - 尺寸：修改[size_list_CN.csv](demo/assets/size_list_CN.csv)后再次运行 `app.py` 即可，其中第一列为尺寸名，第二列为高度，第三列为宽度。
 - 颜色：修改[color_list_CN.csv](demo/assets/color_list_CN.csv)后再次运行 `app.py` 即可，其中第一列为颜色名，第二列为Hex值。
 
-## 如何修改水印字体？
+## 2. 如何修改水印字体？
 
 1. 将字体文件放到`hivision/plugin/font`文件夹下
 2. 修改`hivision/plugin/watermark.py`的`font_file`参数值为字体文件名
+
+## 3. 如何添加社交媒体模板照？
+
+1. 将模板图片放到`hivision/plugin/template/assets`文件夹下。模板图片是一个4通道的透明png。
+2. 在`hivision/plugin/template/assets/template_config.json`文件中添加最新的模板信息，其中`width`为模板图宽度(px)，`height`为模板图高度(px)，`anchor_points`为模板中透明区域的四个角的坐标(px)；`rotation`为透明区域相对于垂直方向的旋转角度，>0为逆时针，<0为顺时针。
+3. 在`demo/processor.py`的`_generate_image_template`函数中的`TEMPLATE_NAME_LIST`变量添加最新的模板名
+
+<img src="assets/social_template.png" width="500">
+
+## 4. 如何修改Gradio Demo的顶部导航栏？
+
+- 修改`demo/assets/title.md`
 
 <br>
 
@@ -356,7 +385,15 @@ docker run  -d -p 7860:7860 \
 
 <br>
 
-# 贡献者
+# 🙏 感谢支持
+
+[![Stargazers repo roster for @Zeyi-Lin/HivisionIDPhotos](https://reporoster.com/stars/Zeyi-Lin/HivisionIDPhotos)](https://github.com/Zeyi-Lin/HivisionIDPhotos/stargazers)
+
+[![Forkers repo roster for @Zeyi-Lin/HivisionIDPhotos](https://reporoster.com/forks/Zeyi-Lin/HivisionIDPhotos)](https://github.com/Zeyi-Lin/HivisionIDPhotos/network/members)
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Zeyi-Lin/HivisionIDPhotos&type=Date)](https://star-history.com/#Zeyi-Lin/HivisionIDPhotos&Date)
+
+贡献者们：
 
 <a href="https://github.com/Zeyi-Lin/HivisionIDPhotos/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Zeyi-Lin/HivisionIDPhotos" />
@@ -366,9 +403,28 @@ docker run  -d -p 7860:7860 \
 
 <br>
 
-# StarHistory
+# 📜 Lincese
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Zeyi-Lin/HivisionIDPhotos&type=Date)](https://star-history.com/#Zeyi-Lin/HivisionIDPhotos&Date)
+This repository is licensed under the [Apache-2.0 License](LICENSE).
+
+<br>
+
+# 📚 引用
+
+如果您在研究或项目中使用了HivisionIDPhotos，请考虑引用我们的工作。您可以使用以下BibTeX条目：
+
+```bibtex
+@misc{hivisionidphotos,
+      title={{HivisionIDPhotos: A Lightweight and Efficient AI ID Photos Tool}},
+      author={Zeyi Lin and SwanLab Team},
+      year={2024},
+      publisher={GitHub},
+      url = {\url{https://github.com/Zeyi-Lin/HivisionIDPhotos}},
+}
+```
+
+
+
 
 [github-stars-shield]: https://img.shields.io/github/stars/zeyi-lin/hivisionidphotos?color=ffcb47&labelColor=black&style=flat-square
 [github-stars-link]: https://github.com/zeyi-lin/hivisionidphotos/stargazers
@@ -407,3 +463,14 @@ docker run  -d -p 7860:7860 \
 
 [github-forks-shield]: https://img.shields.io/github/forks/zeyi-lin/hivisionidphotos?color=8ae8ff&labelColor=black&style=flat-square
 [github-forks-link]: https://github.com/zeyi-lin/hivisionidphotos/network/members
+
+[modelscope-shield]: https://img.shields.io/badge/Demo_on_ModelScope-purple?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIzIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCiA8Zz4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHBhdGggaWQ9InN2Z18xNCIgZmlsbD0iIzYyNGFmZiIgZD0ibTAsODkuODRsMjUuNjUsMGwwLDI1LjY0OTk5bC0yNS42NSwwbDAsLTI1LjY0OTk5eiIvPgogIDxwYXRoIGlkPSJzdmdfMTUiIGZpbGw9IiM2MjRhZmYiIGQ9Im05OS4xNCwxMTUuNDlsMjUuNjUsMGwwLDI1LjY1bC0yNS42NSwwbDAsLTI1LjY1eiIvPgogIDxwYXRoIGlkPSJzdmdfMTYiIGZpbGw9IiM2MjRhZmYiIGQ9Im0xNzYuMDksMTQxLjE0bC0yNS42NDk5OSwwbDAsMjIuMTlsNDcuODQsMGwwLC00Ny44NGwtMjIuMTksMGwwLDI1LjY1eiIvPgogIDxwYXRoIGlkPSJzdmdfMTciIGZpbGw9IiMzNmNmZDEiIGQ9Im0xMjQuNzksODkuODRsMjUuNjUsMGwwLDI1LjY0OTk5bC0yNS42NSwwbDAsLTI1LjY0OTk5eiIvPgogIDxwYXRoIGlkPSJzdmdfMTgiIGZpbGw9IiMzNmNmZDEiIGQ9Im0wLDY0LjE5bDI1LjY1LDBsMCwyNS42NWwtMjUuNjUsMGwwLC0yNS42NXoiLz4KICA8cGF0aCBpZD0ic3ZnXzE5IiBmaWxsPSIjNjI0YWZmIiBkPSJtMTk4LjI4LDg5Ljg0bDI1LjY0OTk5LDBsMCwyNS42NDk5OWwtMjUuNjQ5OTksMGwwLC0yNS42NDk5OXoiLz4KICA8cGF0aCBpZD0ic3ZnXzIwIiBmaWxsPSIjMzZjZmQxIiBkPSJtMTk4LjI4LDY0LjE5bDI1LjY0OTk5LDBsMCwyNS42NWwtMjUuNjQ5OTksMGwwLC0yNS42NXoiLz4KICA8cGF0aCBpZD0ic3ZnXzIxIiBmaWxsPSIjNjI0YWZmIiBkPSJtMTUwLjQ0LDQybDAsMjIuMTlsMjUuNjQ5OTksMGwwLDI1LjY1bDIyLjE5LDBsMCwtNDcuODRsLTQ3Ljg0LDB6Ii8+CiAgPHBhdGggaWQ9InN2Z18yMiIgZmlsbD0iIzM2Y2ZkMSIgZD0ibTczLjQ5LDg5Ljg0bDI1LjY1LDBsMCwyNS42NDk5OWwtMjUuNjUsMGwwLC0yNS42NDk5OXoiLz4KICA8cGF0aCBpZD0ic3ZnXzIzIiBmaWxsPSIjNjI0YWZmIiBkPSJtNDcuODQsNjQuMTlsMjUuNjUsMGwwLC0yMi4xOWwtNDcuODQsMGwwLDQ3Ljg0bDIyLjE5LDBsMCwtMjUuNjV6Ii8+CiAgPHBhdGggaWQ9InN2Z18yNCIgZmlsbD0iIzYyNGFmZiIgZD0ibTQ3Ljg0LDExNS40OWwtMjIuMTksMGwwLDQ3Ljg0bDQ3Ljg0LDBsMCwtMjIuMTlsLTI1LjY1LDBsMCwtMjUuNjV6Ii8+CiA8L2c+Cjwvc3ZnPg==&labelColor=white
+[modelscope-link]: https://modelscope.cn/studios/SwanLab/HivisionIDPhotos
+
+<!-- 社区项目链接 -->
+[community-hivision-comfyui]: https://github.com/AIFSH/HivisionIDPhotos-ComfyUI
+[community-hivision-wechat]: https://github.com/no1xuan/HivisionIDPhotos-wechat-weapp
+[community-hivision-uniapp]: https://github.com/soulerror/HivisionIDPhotos-Uniapp
+[community-hivision-cpp]: https://github.com/zjkhahah/HivisionIDPhotos-cpp
+[community-hivision-windows-gui]: https://github.com/zhaoyun0071/HivisionIDPhotos-windows-GUI
+[community-hivision-nas]: https://github.com/ONG-Leo/HivisionIDPhotos-NAS
